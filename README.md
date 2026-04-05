@@ -1,81 +1,185 @@
-🧠 AI Notes Organizer - Enterprise v3.0
-AI Notes Organizer is an advanced enterprise-grade desktop solution designed to intelligently identify scattered handwritten and digital notes and automatically organize them into subject-specific directories.
+# 🧠 AI Notes Organizer — Enterprise v3.0
 
-"Stop searching for notes, start focusing on your studies."
+<p align="center">
+  <img src="https://dummyimage.com/1200x300/0f172a/ffffff&text=AI+Notes+Organizer+Enterprise+v3.0" />
+</p>
 
-✨ Key Features
-🚀 Neural Waterfall Routing: Our system utilizes a tiered architecture of proprietary AI models (VIP, Lite, and Survival layers) to ensure ultra-fast processing without compromising accuracy.
+<p align="center">
+  <b>Stop searching for notes, start focusing on your studies.</b>
+</p>
 
-🖋️ Deep OCR Engine: Powered by advanced neural networks, the engine provides high-fidelity text extraction for both handwritten and typed notes with multi-language support.
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.9+-blue?style=for-the-badge&logo=python"/>
+  <img src="https://img.shields.io/badge/AI-Neural%20Engine-purple?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Platform-Windows-green?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/License-MIT-orange?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Status-Active-success?style=for-the-badge"/>
+</p>
 
-🧬 Cryptographic Deduplication: Uses SHA-256 Fingerprinting technology to ensure that duplicate files are identified instantly, saving your AI quota and storage space.
+---
 
-📅 Enterprise Renaming Protocol: Automatically renames files using a standardized format: Subject_Notes_SA_YYMMDD_UniqueID.pdf.
+## 🧠 About the Project
 
-📚 Centralized Digital Library: A built-in dashboard to search, open, rename, or delete organized notes directly from the application.
+AI Notes Organizer is an **enterprise-grade AI desktop system** that automatically:
 
-🎭 Meme-Powered UX: To ensure a smooth user experience during heavy processing, the app features an interactive UI with 20+ context-aware memes.
+- 📂 Detects scattered notes  
+- 🖋️ Extracts text using OCR  
+- 🧠 Understands subject context  
+- 📚 Organizes files intelligently  
 
-🛠️ Installation (Step-by-Step)
-1. Clone the Repository
+---
 
-Bash
-git clone https://github.com/iamsachinaryan/AI-Notes-Organizer.git
-cd AI-Notes-Organizer
-2. Install Dependencies
+## ✨ Features
 
-Bash
-pip install -r requirements.txt
-3. Environment Configuration
-Create a .env file in the root directory and add your Enterprise API Key:
+### 🚀 Neural Waterfall Routing
+VIP → Lite → Survival architecture ensuring:
+- ⚡ High speed  
+- 🎯 Maximum accuracy  
+- 💡 Efficient processing  
 
-Code snippet
-GEMINI_API_KEY=your_secret_key_here
-4. Poppler Setup (Required)
-The application uses pdf2image for document processing, which requires Poppler.
+---
 
-Download Poppler for Windows.
+### 🖋️ Deep OCR Engine
+- Handwritten + printed notes  
+- Multi-language support  
+- High-fidelity extraction  
 
-Add the bin folder path to your System Environment Variables (PATH).
+---
 
-🚀 System Architecture (How it Works)
-The workflow is divided into a specialized 4-phase pipeline:
+### 🧬 Cryptographic Deduplication
+- SHA-256 fingerprinting  
+- Removes duplicate files instantly  
 
-Security & Integrity Check: Validates file format and performs a 128-bit structural integrity scan.
+---
 
-Deep Scanning: The Neural-OCR engine scans every page to extract text and document context.
+### 📅 Enterprise Renaming Protocol
 
-Cognitive Context Analysis: Our trained model identifies the core subject (e.g., Compiler Design, Mathematics, Biology).
+Subject_Notes_SA_YYMMDD_UniqueID.pdf  
 
-Autonomous Organization: The file is renamed via the SA-Universal protocol and routed to its respective subject folder.
+Example:  
+Maths_Notes_SA_260406_A7X92.pdf  
 
-📂 Intelligent Library Search
-Find your notes instantly with our high-performance search engine:
+---
 
-Instant Filtering: Results appear as soon as you type a single character.
+### 📚 Centralized Digital Library
 
-Optimized Results: Displays the top 5 most relevant matches for rapid navigation.
+- 🔍 Instant search  
+- 📂 Open files  
+- ✏️ Rename  
+- ❌ Delete  
 
-Direct Actions: Open, Rename, or Delete files directly from the library interface.
+---
 
-📝 Software Requirements
-OS: Windows 10 / 11
+### 🎭 Meme-Powered UX
+- 20+ context-aware memes 😎  
+- Keeps processing fun  
 
-Language: Python 3.9 or higher
+---
 
-Connectivity: Active Internet connection (Required for Neural Processing)
+## 🛠️ Installation
 
-👤 Research & Development Team
-This project is the result of intensive collaboration and research:
+git clone https://github.com/iamsachinaryan/AI-Notes-Organizer.git  
+cd AI-Notes-Organizer  
+pip install -r requirements.txt  
 
-Sachin Aryan — Lead Developer & Project Visionary
+---
 
+## 🔐 Environment Setup
 
-📜 License & Copyright
-Copyright © 2026 Sachin Aryan.
+Create `.env` file:
 
-All rights reserved. Distributed under the MIT License.
+GEMINI_API_KEY=your_secret_key_here  
 
-Last Updated: 06 April 2026
+---
 
-Note: This project is part of a research initiative to automate academic workflow management using Proprietary Neural Engines.
+## ⚙️ Poppler Setup
+
+- Download Poppler  
+- Extract it  
+- Add `/bin` folder to PATH  
+
+---
+
+## 🚀 System Architecture
+
+### 🔐 Phase 1 — Security Check  
+File validation + integrity scan  
+
+### 🔍 Phase 2 — Deep OCR  
+Text extraction + structure  
+
+### 🧠 Phase 3 — AI Analysis  
+Subject detection  
+
+### 📂 Phase 4 — Organization  
+Rename + move to subject folder  
+
+---
+
+## 🔎 Intelligent Search
+
+- ⚡ Instant filtering  
+- 🎯 Top 5 results  
+- ⚙️ Open / Rename / Delete  
+
+---
+
+## 🖥️ Preview
+
+<p align="center">
+  <img src="https://dummyimage.com/900x500/020617/38bdf8&text=AI+Dashboard+Preview"/>
+</p>
+
+---
+
+## 🎨 Logo
+
+<p align="center">
+  <img src="https://dummyimage.com/200x200/0ea5e9/ffffff&text=AI+🧠"/>
+</p>
+
+---
+
+## 📝 Requirements
+
+- Windows 10 / 11  
+- Python 3.9+  
+- Internet connection  
+
+---
+
+## 👨‍💻 Developer
+
+**Sachin Aryan**  
+🚀 Lead Developer & Visionary  
+
+---
+
+## 📜 License
+
+MIT License © 2026 Sachin Aryan  
+
+---
+
+## 🔮 Future Scope
+
+- 📱 Mobile App  
+- ☁️ Cloud Sync  
+- 🤖 Offline AI  
+- 🎓 Study Assistant  
+
+---
+
+## ⭐ Support
+
+If you like this project:
+
+⭐ Star the repo  
+🍴 Fork it  
+💡 Contribute  
+
+---
+
+## 💬 Final Thought
+
+> Your notes should work for you, not the other way around.
