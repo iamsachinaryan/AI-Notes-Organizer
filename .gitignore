@@ -1,0 +1,5 @@
+.env
+__pycache__/
+Organized_Notes/
+notes_registry.db
+google_key.json
