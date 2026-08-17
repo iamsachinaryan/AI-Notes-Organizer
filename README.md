@@ -1,185 +1,164 @@
 # 🧠 AI Notes Organizer — Enterprise v3.0
 
 <p align="center">
-  <img src="https://dummyimage.com/1200x300/0f172a/ffffff&text=AI+Notes+Organizer+Enterprise+v3.0" />
+  <img src="https://img.shields.io/badge/Python-3.9+-blue?style=for-the-badge&logo=python"/>
+  <img src="https://img.shields.io/badge/React-19-cyan?style=for-the-badge&logo=react"/>
+  <img src="https://img.shields.io/badge/FastAPI-Backend-green?style=for-the-badge&logo=fastapi"/>
+  <img src="https://img.shields.io/badge/AI-Gemini-purple?style=for-the-badge&logo=google"/>
+  <img src="https://img.shields.io/badge/Platform-Windows-blue?style=for-the-badge&logo=windows"/>
+  <img src="https://img.shields.io/badge/License-MIT-orange?style=for-the-badge"/>
 </p>
 
 <p align="center">
   <b>Stop searching for notes, start focusing on your studies.</b>
 </p>
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Python-3.9+-blue?style=for-the-badge&logo=python"/>
-  <img src="https://img.shields.io/badge/AI-Neural%20Engine-purple?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/Platform-Windows-green?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/License-MIT-orange?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/Status-Active-success?style=for-the-badge"/>
-</p>
-
 ---
 
 ## 🧠 About the Project
 
-AI Notes Organizer is an **enterprise-grade AI desktop system** that automatically:
+AI Notes Organizer is an **AI-powered full-stack system** that automatically:
 
-- 📂 Detects scattered notes  
-- 🖋️ Extracts text using OCR  
-- 🧠 Understands subject context  
-- 📚 Organizes files intelligently  
+- 📂 Accepts PDF notes via drag & drop
+- 🖋️ Extracts text using Google Vision OCR
+- 🧠 Classifies subject using Gemini AI
+- 📚 Organizes files into subject-wise folders
+- 🔍 Provides a searchable notes library
 
----
-
-## ✨ Features
-
-### 🚀 Neural Waterfall Routing
-VIP → Lite → Survival architecture ensuring:
-- ⚡ High speed  
-- 🎯 Maximum accuracy  
-- 💡 Efficient processing  
+**Stack:** React (Frontend) + FastAPI (Backend) + Google Gemini AI
 
 ---
 
-### 🖋️ Deep OCR Engine
-- Handwritten + printed notes  
-- Multi-language support  
-- High-fidelity extraction  
+## 💻 Installation Guide (New Laptop Setup)
+
+### ✅ Step 1 — Install Prerequisites
+
+Make sure these are installed on the new laptop:
+
+| Tool | Download Link | Version |
+|------|--------------|---------|
+| Python | https://www.python.org/downloads/ | 3.9+ |
+| Node.js | https://nodejs.org/ | 18+ |
+| Git | https://git-scm.com/downloads | Latest |
+| Poppler | https://github.com/oschwartz10612/poppler-windows/releases/ | Latest |
+
+> ⚠️ **Poppler Setup (Important):**
+> 1. Download the zip from the link above
+> 2. Extract it anywhere (e.g., `C:\poppler`)
+> 3. Add `C:\poppler\Library\bin` to Windows PATH
+>    - Search "Environment Variables" → Edit Path → Add New → Paste path → OK
 
 ---
 
-### 🧬 Cryptographic Deduplication
-- SHA-256 fingerprinting  
-- Removes duplicate files instantly  
+### ✅ Step 2 — Clone the Project
+
+Open **Command Prompt** or **PowerShell** and run:
+
+```bash
+git clone https://github.com/iamsachinaryan/AI-Notes-Organizer.git
+cd AI-Notes-Organizer
+```
 
 ---
 
-### 📅 Enterprise Renaming Protocol
+### ✅ Step 3 — Setup Backend (Python)
 
-Subject_Notes_SA_YYMMDD_UniqueID.pdf  
-
-Example:  
-Maths_Notes_SA_260406_A7X92.pdf  
-
----
-
-### 📚 Centralized Digital Library
-
-- 🔍 Instant search  
-- 📂 Open files  
-- ✏️ Rename  
-- ❌ Delete  
+```bash
+pip install -r requirements.txt
+pip install fastapi uvicorn
+```
 
 ---
 
-### 🎭 Meme-Powered UX
-- 20+ context-aware memes 😎  
-- Keeps processing fun  
+### ✅ Step 4 — Setup Frontend (React)
+
+```bash
+cd frontend
+npm install
+cd ..
+```
 
 ---
 
-## 🛠️ Installation
+### ✅ Step 5 — Create `.env` File
 
-git clone https://github.com/iamsachinaryan/AI-Notes-Organizer.git  
-cd AI-Notes-Organizer  
-pip install -r requirements.txt  
+In the project root folder, create a file named `.env` and paste:
 
----
+```
+GEMINI_API_KEY=your_gemini_api_key_here
+```
 
-## 🔐 Environment Setup
-
-Create `.env` file:
-
-GEMINI_API_KEY=your_secret_key_here  
+> 🔑 **Get Gemini API Key:**
+> Go to https://aistudio.google.com/app/apikey → Create API Key → Copy & paste above
 
 ---
 
-## ⚙️ Poppler Setup
+### ✅ Step 6 — Run the Project
 
-- Download Poppler  
-- Extract it  
-- Add `/bin` folder to PATH  
+You need **2 terminals** open at the same time:
 
----
+**Terminal 1 — Backend:**
+```bash
+python -m uvicorn server:app --reload --port 8000
+```
 
-## 🚀 System Architecture
+**Terminal 2 — Frontend:**
+```bash
+cd frontend
+npm start
+```
 
-### 🔐 Phase 1 — Security Check  
-File validation + integrity scan  
-
-### 🔍 Phase 2 — Deep OCR  
-Text extraction + structure  
-
-### 🧠 Phase 3 — AI Analysis  
-Subject detection  
-
-### 📂 Phase 4 — Organization  
-Rename + move to subject folder  
+App will automatically open at **http://localhost:3000** 🚀
 
 ---
 
-## 🔎 Intelligent Search
+## 📁 Project Structure
 
-- ⚡ Instant filtering  
-- 🎯 Top 5 results  
-- ⚙️ Open / Rename / Delete  
-
----
-
-## 🖥️ Preview
-
-<p align="center">
-  <img src="https://dummyimage.com/900x500/020617/38bdf8&text=AI+Dashboard+Preview"/>
-</p>
-
----
-
-## 🎨 Logo
-
-<p align="center">
-  <img src="https://dummyimage.com/200x200/0ea5e9/ffffff&text=AI+🧠"/>
-</p>
+```
+AI-Notes-Organizer/
+├── server.py           # FastAPI backend server
+├── extractor.py        # Google Vision OCR engine
+├── classifier.py       # Gemini AI subject classifier
+├── registry.py         # SQLite notes database
+├── brain.py            # Core AI logic
+├── requirements.txt    # Python dependencies
+├── .env                # API keys (create manually)
+├── Organized_Notes/    # Auto-created notes folders
+└── frontend/           # React web app
+    ├── src/
+    │   ├── App.js          # Main app
+    │   ├── Upload.js       # Upload page
+    │   └── ViewNotes.js    # Notes library
+    └── package.json
+```
 
 ---
 
-## 📝 Requirements
+## 🔐 Environment Variables
 
-- Windows 10 / 11  
-- Python 3.9+  
-- Internet connection  
+| Variable | Description |
+|----------|-------------|
+| `GEMINI_API_KEY` | Your Google Gemini API key |
+
+---
+
+## 📝 System Requirements
+
+- Windows 10 / 11
+- Python 3.9+
+- Node.js 18+
+- Internet connection (for Gemini AI)
+- Poppler (for PDF processing)
 
 ---
 
 ## 👨‍💻 Developer
 
-**Sachin Aryan**  
-🚀 Lead Developer & Visionary  
+**Sachin Aryan**
+🚀 Lead Developer & Visionary
 
 ---
 
 ## 📜 License
 
-MIT License © 2026 Sachin Aryan  
-
----
-
-## 🔮 Future Scope
-
-- 📱 Mobile App  
-- ☁️ Cloud Sync  
-- 🤖 Offline AI  
-- 🎓 Study Assistant  
-
----
-
-## ⭐ Support
-
-If you like this project:
-
-⭐ Star the repo  
-🍴 Fork it  
-💡 Contribute  
-
----
-
-## 💬 Final Thought
-
-> Your notes should work for you, not the other way around.
+MIT License © 2026 Sachin Aryan
