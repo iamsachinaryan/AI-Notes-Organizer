@@ -112,8 +112,8 @@ async def upload_note(file: UploadFile = File(...)):
         except Exception:
             raw_text = ""
 
-        # 🚀 3. CLASSIFICATION 
-        classification = get_subject_from_text(raw_text, correlation_id=file.filename)
+        # 🚀 3. CLASSIFICATION (AI-first: text → image → filename, no keyword guessing)
+        classification = get_subject_from_text(raw_text, correlation_id=file.filename, pdf_path=temp_path if temp_path.exists() else None)
         final_subject = classification.subject if classification.subject and len(classification.subject) > 2 else "General Studies"
 
         # 🚀 4. ORGANIZATION
