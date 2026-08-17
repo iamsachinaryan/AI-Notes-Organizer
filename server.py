@@ -2,6 +2,7 @@
 Neural-Sync API — FINAL DEMO EDITION (DB JUNK FILTER + 99% FIX)
 """
 import os
+import re
 import shutil
 import json
 import time
@@ -11,6 +12,32 @@ import logging
 from pathlib import Path
 from datetime import datetime
 from dotenv import load_dotenv
+
+def keyword_subject(fname: str) -> str:
+    """Match subject keyword using whole-word regex to avoid false matches like 'os' in 'ratios'."""
+    mapping = [
+        (["java"], "Java Programming"),
+        (["dbms"], "Database Management System"),
+        ([r"\bos\b"], "Operating System"),
+        (["network"], "Computer Networks"),
+        (["software"], "Software Engineering"),
+        (["trigonometry", "trig"], "Mathematics"),
+        (["maths", "math", "calculus", "algebra"], "Mathematics"),
+        (["physics"], "Physics"),
+        (["chemistry"], "Chemistry"),
+        (["biology"], "Biology"),
+        (["history"], "History"),
+        (["geography"], "Geography"),
+        (["economics"], "Economics"),
+        (["english"], "English"),
+        (["hindi"], "Hindi"),
+        (["algorithm", "data.structure"], "Data Structures & Algorithms"),
+    ]
+    for keywords, subject in mapping:
+        for kw in keywords:
+            if re.search(kw, fname, re.IGNORECASE):
+                return subject
+    return ""
 
 from fastapi import FastAPI, File, UploadFile, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
@@ -65,12 +92,11 @@ async def upload_note(file: UploadFile = File(...)):
             
             # Agar DB me puraana 'Unsorted' save hai, toh usey overwrite karo!
             if "unsorted" in sub_name.lower() or "general" in sub_name.lower() or not sub_name:
-                if "java" in fname: sub_name = "Java Programming"
-                elif "dbms" in fname: sub_name = "Database Management System"
-                elif "os" in fname: sub_name = "Operating System"
-                elif "network" in fname: sub_name = "Computer Networks"
-                elif "software" in fname: sub_name = "Software Engineering"
-                else: sub_name = file.filename.replace("temp_", "").replace(".pdf", "").replace("_", " ").title()
+                detected = keyword_subject(fname)
+                if detected:
+                    sub_name = detected
+                else:
+                    sub_name = file.filename.replace("temp_", "").replace(".pdf", "").replace("_", " ").title()
             
             return {
                 "status": "success", 
@@ -115,14 +141,9 @@ async def upload_note(file: UploadFile = File(...)):
         if temp_path.exists():
             os.remove(temp_path)
         
-        # Fallback keyword check if everything crashes
+        # Fallback keyword check if everything crashes (word-boundary safe)
         fname = file.filename.lower()
-        sub_name = "General Studies"
-        if "java" in fname: sub_name = "Java Programming"
-        elif "dbms" in fname: sub_name = "Database Management System"
-        elif "os" in fname: sub_name = "Operating System"
-        elif "network" in fname: sub_name = "Computer Networks"
-        elif "software" in fname: sub_name = "Software Engineering"
+        sub_name = keyword_subject(fname) or "General Studies"
 
         return {"status": "success", "subject": sub_name, "confidence": 99, "path": ""}
 

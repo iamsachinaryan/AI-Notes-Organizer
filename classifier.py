@@ -14,6 +14,10 @@ from dataclasses import dataclass
 from typing import Optional
 import threading
 
+def word_match(keyword: str, text: str) -> bool:
+    """Match keyword as a whole word only, not as substring inside another word."""
+    return bool(re.search(r'\b' + re.escape(keyword) + r'\b', text, re.IGNORECASE))
+
 load_dotenv()
 from google import genai
 from google.genai import types
@@ -53,21 +57,34 @@ def get_subject_from_text(text: str, correlation_id: Optional[str] = None) -> Cl
     start_time = time.perf_counter()
     fname = str(correlation_id).lower() if correlation_id else ""
     
-    # 🚨 5-SUBJECT EXACT MAPPING FOR DEMO 🚨
+    # 🚨 5-SUBJECT EXACT MAPPING (WORD BOUNDARY SAFE) 🚨
     mapping = {
         "java": "Java Programming",
         "dbms": "Database Management System",
         "os": "Operating System",
         "network": "Computer Networks",
-        "software": "Software Engineering"
+        "software": "Software Engineering",
+        "trigonometry": "Mathematics",
+        "maths": "Mathematics",
+        "math": "Mathematics",
+        "physics": "Physics",
+        "chemistry": "Chemistry",
+        "biology": "Biology",
+        "history": "History",
+        "geography": "Geography",
+        "economics": "Economics",
+        "english": "English",
+        "hindi": "Hindi",
+        "algorithm": "Data Structures & Algorithms",
+        "data structure": "Data Structures & Algorithms",
     }
     
     logger.info("🧠 AI is analyzing document context deeply...")
     time.sleep(random.uniform(8, 10))
 
-    # 1. Check mapping
+    # 1. Check mapping using WORD BOUNDARY match (fixes 'os' matching 'ratios' bug)
     for key, val in mapping.items():
-        if key in fname or (text and key in text.lower()[:500]):
+        if word_match(key, fname) or (text and word_match(key, text[:500])):
             elapsed_ms = int((time.perf_counter() - start_time) * 1000)
             logger.info(f"✅ Matched via Direct Mapping: {val}")
             return ClassificationResult(val, 0.99, "Emergency_Engine", elapsed_ms)
