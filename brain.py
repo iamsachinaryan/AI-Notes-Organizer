@@ -1,6 +1,6 @@
 import os
 import google.generativeai as genai
-
+#brain.py - AI logic for text extraction and classification
 def setup_gemini():
     api_key = os.getenv("GEMINI_API_KEY")
     if not api_key:

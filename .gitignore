@@ -3,3 +3,7 @@ __pycache__/
 Organized_Notes/
 notes_registry.db
 google_key.json
+frontend/node_modules/
+frontend/build/
+temp_*.pdf
+*.pdf
